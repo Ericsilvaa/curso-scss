@@ -107,6 +107,8 @@
 
  // mixin row
  @mixin row {
+    display: flex;
+    flex-wrap: wrap;
     position: relative;
     margin-left: -$gutter/2;
     margin-right: -$gutter/2;
