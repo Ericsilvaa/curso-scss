@@ -1,0 +1,23 @@
+footer {
+    padding: 20px 0;
+    background: $bg-traco;
+    p {
+        color: $bg-tipografia;
+        @include d(s) {
+            text-align: center;
+        }
+    }
+}
+
+header {
+    padding: 20px 0;
+    background: $bg-traco;
+    li {
+        color: $bg-borda;
+        cursor: pointer;
+        &:hover {
+            color: aliceblue;
+        }
+    }
+    
+}

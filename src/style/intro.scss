@@ -1,0 +1,61 @@
+.intro {
+    margin-top: 50px;
+    @include d(s) {
+       margin-top: 20px;
+    }
+
+}
+
+.logo {
+    margin-bottom:40px ;
+}
+
+.intro-info {
+    border-right: 2px solid $bg-traco;
+    max-width: 320px;
+    p {
+        padding-top: 10px;
+    }
+    p:first-child {
+        border-bottom: 2px solid $bg-traco;
+        padding-bottom: 20px;
+
+    }
+}
+
+.intro-telefone {
+    color: $bg-tipografia;
+    @include d(s) {
+        margin-bottom: 30px;
+    }
+    &::after {
+        content: '////';
+        display: block;
+        margin-top: 200px;
+        font-size: 220px;
+        letter-spacing: -45px;
+        color: $bg-traco;
+        @include d(m) {
+            margin-top: 80px;
+            font-size:140px;
+            letter-spacing: -25px;
+        }
+        @include d(s) {
+            display: none;
+        }
+    }
+}
+
+.aberto {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    background-color: $aberto;
+    border-radius: 50%;
+    margin-left: 10px ;
+}
+
+.intro-foto {
+    border: 10px solid $bg-borda;
+    width: 100%;
+}

@@ -1,12 +1,14 @@
 <template>
-    <section>
+    <header>
         <div class="cabecalho">
             <img src="../assets/img/lescone-icone.png" alt="Le Scone Icone">
             <nav>
-                <ul class="nav"><li>Menu</li><li>Contato</li></ul>
+                <ul class="nav">
+                    <li>Menu</li>
+                    <li>Contato</li></ul>
             </nav>
         </div>
-    </section>
+    </header>
   
 </template>
 
@@ -22,11 +24,11 @@ export default {
          display: flex;
          align-items: center;
          justify-content: space-between;
-         margin:0px 10px;
+         margin:0px 20px;
     }
 
     .nav {
         display: flex;
-        gap: 10px;
+        gap: 15px;
     }
 </style>

@@ -1,6 +1,9 @@
 @import 'grid';
 @import 'mixin';
 @import 'variaveis-e-mixins';
+@import 'intro';
+@import 'menu';  
+@import 'footer';  
 
 
 //Gerais
@@ -13,13 +16,40 @@ body {
     background: $bg-fundo;
     // border: 10px solid $bg-borda;
     color: $bg-traco;
+    margin: 0;
+    padding: 0;
 }
 
 img {
-    max-width: 100%;
     display: block;
+    max-width: 100%;
 }
 
 ul {
     list-style: none;
+}
+
+p {
+    @include tipo-1(18)
+}
+
+.titulo {
+    @include tipo-1(18);
+    text-transform: uppercase;
+    @include d(s) {
+        margin-bottom: 30px;
+    }
+    &::after {
+        content: '';
+        display: block;
+        background: $bg-traco;
+        width: 70%;
+        height: 2px;
+        float: right;
+        margin-top: 12px;
+        @include d(m) {
+            width: 60%;
+        }
+    }
+
 }

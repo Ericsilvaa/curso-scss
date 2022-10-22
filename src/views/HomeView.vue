@@ -3,7 +3,7 @@
       <section class="container intro">
          <div class="grid-5">
             <img class="logo" src="../assets/img/lescone.png" alt="lescone">
-            <div class="intro-">
+            <div class="intro-info">
                <p>De Seg. á Sab. <span class="aberto"></span><br> das 07:00h às 18:00h </p>
                <p>Praia do Rosa, xxx <br> Santa Catarina - SC</p>
             </div>
@@ -11,7 +11,7 @@
          </div>
    
          <div class="grid-7">
-            <img src="../assets/img/foto.png" alt="Foto de Le Scone">
+            <img class="intro-foto" src="../assets/img/foto.png" alt="Foto de Le Scone">
          </div>
 
       </section>
@@ -38,8 +38,10 @@ import ContatoView from '@/components/ContatoView.vue'
  }
  </script>
  
- <style scoped>
- .intro {
+<style lang="scss" scoped>
+   .intro {
    display: flex;
- }
+   }
+ 
  </style>
+
