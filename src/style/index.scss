@@ -1,6 +1,25 @@
 @import 'grid';
 @import 'mixin';
+@import 'variaveis-e-mixins';
+
+
+//Gerais
 
 *, *::before, *::after {
     box-sizing: border-box;
+}
+
+body {
+    background: $bg-fundo;
+    // border: 10px solid $bg-borda;
+    color: $bg-traco;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+ul {
+    list-style: none;
 }
