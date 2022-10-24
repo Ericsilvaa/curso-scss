@@ -2,36 +2,54 @@
     <section class="menu">
         <h1 class="grid-4 titulo">Menu</h1>
         <div class="grid-7 offset-1">
-            <div>
-                <div class="menu-item">
-                    <img src="../assets/img/prato-1.png" alt="Prato 1">
-                    <h2>Entradas</h2>
-                    <ul>
-                        <li><span>R$1,70</span> Ovos Mexidos</li>
-                        <li><span>R$2,70</span> Scones de Frutas</li>
-                        <li><span>R$4,70</span> Joelho de Queijo</li>
-                        <li><span>R$3,70</span> Presunto Cozido</li>
-                    </ul>
-                </div>
-                <div class="menu-item">
-                    <img src="../assets/img/prato-2.png" alt="Prato 2">
-                    <h2>Pratos Principais</h2>
-                    <ul>
-                        <li><span>R$10,70</span> Penne com Queijo</li>
-                        <li><span>R$22,70</span> Feijoada</li>
-                        <li><span>R33,70</span> Costela ao Molho</li>
-                        <li><span>R$13,70</span> Medalhão de Frango</li>
-                    </ul>
-                </div>
-            </div>
+            <!-- Realizar um Crud -->
+           
+            <MenuEntradas :entrada='entradas'  />
+            <MenuPrincipais :principais="principais"/>
         </div>
     </section>
   
 </template>
 
 <script>
+import MenuEntradas from '@/components/MenuEntradas.vue'
+import MenuPrincipais from '@/components/MenuPrincipais.vue'
+import { api } from '@/services'
+
+
 export default {
     name: 'Menu',
+    components: {MenuEntradas, MenuPrincipais},
+    data() {
+        return {
+            entradas: [
+                // {name: 'Ovos Mexidos', value: '1,70'},
+                // {name: 'Scones de Frutas', value: '2,70'},
+
+            ],
+            principais: [
+                // {name: 'Ovos Mexidos', value: '1,70'},
+                // {name: 'Scones de Frutas', value: '2,70'},
+                
+            ]
+        }
+    },
+    methods: {
+        async getCardapio() {
+            try {
+                const buscarEntradas = await api.get('/entradas')
+                const buscarPrincipais = await api.get('/principais')
+
+                this.entradas = buscarEntradas.data
+                this.principais = buscarPrincipais.data
+            } catch (error) {
+                console.log(error)
+            }
+        }
+    },
+    created() {
+        this.getCardapio()
+    }
 
 }
 </script>
